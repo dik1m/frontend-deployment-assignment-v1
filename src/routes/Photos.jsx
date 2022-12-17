@@ -18,6 +18,11 @@ const Photos = () => {
       method: 'DELETE',
     }
     const response = await (await fetch(`https://gallery-app-server.vercel.app/photos/${id}`, options)).json();
+    if(response.error){
+      setError(response.error)
+    }else{
+      navigate('/photos');
+    }
     const filterPhotosWantToDelete = photos.filter(photo => photo.id !== id);
     setPhotos(filterPhotosWantToDelete);
   };
