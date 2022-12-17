@@ -32,7 +32,7 @@ const Photos = () => {
     setLoading(true);
     // TODO: answer here
     async function fetchData(){
-      const response = await (await fetch(`https://gallery-app-server.vercel.app/photos?q=${search}&_sort=id&_order=${sort}`)).json();
+      const response = await (await fetch(`https://gallery-app-server.vercel.app/photos?q=&_sort=id&_order=${sort}`)).json();
       setPhotos(response);
       setLoading(false);
     }
